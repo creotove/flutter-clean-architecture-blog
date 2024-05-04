@@ -1,7 +1,7 @@
 import 'package:clean_architecture_blog_app/core/error/failures.dart';
 import 'package:clean_architecture_blog_app/core/useCase/usecase.dart';
 import 'package:clean_architecture_blog_app/features/auth/domain/repository/auth_repository.dart';
-import 'package:clean_architecture_blog_app/features/auth/domain/repository/entities/user.dart';
+import 'package:clean_architecture_blog_app/core/entities/user.dart';
 import 'package:fpdart/fpdart.dart';
 
 class UserSignUp implements UseCase<User, UserSignUpParams> {

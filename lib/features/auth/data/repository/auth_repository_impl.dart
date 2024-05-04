@@ -2,7 +2,7 @@ import 'package:clean_architecture_blog_app/core/error/exceptions.dart';
 import 'package:clean_architecture_blog_app/core/error/failures.dart';
 import 'package:clean_architecture_blog_app/features/auth/data/dataSources/auth_remote_data_source.dart';
 import 'package:clean_architecture_blog_app/features/auth/domain/repository/auth_repository.dart';
-import 'package:clean_architecture_blog_app/features/auth/domain/repository/entities/user.dart';
+import 'package:clean_architecture_blog_app/core/entities/user.dart';
 import 'package:fpdart/src/either.dart';
 import 'package:supabase_flutter/supabase_flutter.dart' as sb;
 
@@ -46,6 +46,19 @@ class AuthRepositoryImpl implements AuthRepository {
       return left(Failure(e.message));
     } on ServerException catch (e) {
       print(e);
+      return left(Failure(e.message));
+    }
+  }
+
+  @override
+  Future<Either<Failure, User>> getCurrentUserData() async {
+    try {
+      final user = await remoteDataSource.getCurrentUserData();
+      if (user == null) {
+        return left(Failure('User is null'));
+      }
+      return Right(user);
+    } on ServerException catch (e) {
       return left(Failure(e.message));
     }
   }
