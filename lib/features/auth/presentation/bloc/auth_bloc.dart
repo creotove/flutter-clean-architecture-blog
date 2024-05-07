@@ -46,7 +46,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
       (failure) => emit(
         AuthFailure(message: failure.message),
       ),
-      (user) => (user) => _emitAuthSuccess(user, emit),
+      (user) => _emitAuthSuccess(user, emit),
     );
   }
 
@@ -79,5 +79,6 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   void _emitAuthSuccess(User user, Emitter<AuthState> emit) {
     emit(AuthSuccess(user));
     _appUserCubit.updateUser(user);
+    print("user :$user");
   }
 }

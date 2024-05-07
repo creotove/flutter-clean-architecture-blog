@@ -1,9 +1,9 @@
 import 'package:clean_architecture_blog_app/core/theme/app_pallete.dart';
 import 'package:clean_architecture_blog_app/features/auth/presentation/bloc/auth_bloc.dart';
-import 'package:clean_architecture_blog_app/features/auth/presentation/pages/home_page.dart';
 import 'package:clean_architecture_blog_app/features/auth/presentation/pages/signup_page.dart';
 import 'package:clean_architecture_blog_app/features/auth/presentation/widgets/auth_field.dart';
 import 'package:clean_architecture_blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';
+import 'package:clean_architecture_blog_app/features/blog/presentation/pages/blog_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -71,7 +71,7 @@ class _LoginPageState extends State<LoginPage> {
                           context.read<AuthBloc>().stream.listen((state) {
                             if (state is AuthSuccess) {
                               Navigator.pushReplacement(
-                                  context, HomePage.route());
+                                  context, BlogPage.route());
                             }
                           });
                           // else show error message
@@ -95,7 +95,7 @@ class _LoginPageState extends State<LoginPage> {
                         style: Theme.of(context).textTheme.titleMedium,
                         children: [
                           TextSpan(
-                            text: "Sign In",
+                            text: "Sign Up",
                             style: Theme.of(context)
                                 .textTheme
                                 .titleMedium
