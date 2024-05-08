@@ -52,9 +52,7 @@ class _SignUpPageState extends State<SignUpPage> {
               },
               builder: (context, state) {
                 if (state is AuthLoading) {
-                  return const Center(
-                    child: Loader(),
-                  );
+                  return const Loader();
                 }
                 return Form(
                   key: formKey,
