@@ -5,6 +5,7 @@ import 'package:clean_architecture_blog_app/features/auth/presentation/bloc/auth
 import 'package:clean_architecture_blog_app/features/auth/presentation/pages/login_page.dart';
 import 'package:clean_architecture_blog_app/features/auth/presentation/widgets/auth_field.dart';
 import 'package:clean_architecture_blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';
+import 'package:clean_architecture_blog_app/features/blog/presentation/pages/blog_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -46,8 +47,11 @@ class _SignUpPageState extends State<SignUpPage> {
                   showSnackBar(context, state.message);
                 }
                 if (state is AuthSuccess) {
-                  showSnackBar(context, "Sign Up Successful");
-                  Navigator.pop(context);
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    BlogPage.route(),
+                    (route) => false,
+                  );
                 }
               },
               builder: (context, state) {

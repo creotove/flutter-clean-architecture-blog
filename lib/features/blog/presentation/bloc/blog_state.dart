@@ -18,3 +18,8 @@ final class BlogFetchSuccess extends BlogState {
   final List<Blog> blogs;
   BlogFetchSuccess(this.blogs);
 }
+
+final class BlogFetchByIdSuccess extends BlogState {
+  final Blog blog;
+  BlogFetchByIdSuccess(this.blog);
+}

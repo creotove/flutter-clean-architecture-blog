@@ -6,3 +6,8 @@ abstract interface class UseCase<SuccessType, Params> {
 }
 
 class NoParams {}
+
+class ParamsId {
+  final String id;
+  ParamsId(this.id);
+}
