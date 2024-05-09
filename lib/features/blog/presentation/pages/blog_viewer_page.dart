@@ -164,6 +164,7 @@ class BlogViewerPage extends StatelessWidget {
     Key? key,
     required this.blogId,
   }) : super(key: key);
+  static const routeName = '/blog-viewer/:id';
 
   // Function to handle deep links
   Future<void> _handleDeepLink(String url) async {

@@ -13,6 +13,7 @@ class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
 
   static route() => MaterialPageRoute(builder: (context) => const SignUpPage());
+  static const routeName = '/signup';
 
   @override
   State<SignUpPage> createState() => _SignUpPageState();

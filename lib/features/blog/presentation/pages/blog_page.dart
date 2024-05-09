@@ -7,6 +7,7 @@ import 'package:clean_architecture_blog_app/features/blog/presentation/widgets/b
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class BlogPage extends StatefulWidget {
   static route() => MaterialPageRoute(
@@ -33,7 +34,7 @@ class _BlogPageState extends State<BlogPage> {
         actions: [
           IconButton(
             onPressed: () {
-              Navigator.push(context, AddNewBlogPage.route());
+              GoRouter.of(context).push('/add-new-blog');
             },
             icon: const Icon(
               CupertinoIcons.add_circled,

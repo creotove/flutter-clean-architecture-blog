@@ -14,6 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AddNewBlogPage extends StatefulWidget {
   static route() =>
       MaterialPageRoute(builder: (context) => const AddNewBlogPage());
+  static const routeName = '/add-new-blog';
   const AddNewBlogPage({super.key});
 
   @override
